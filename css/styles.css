@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: local("IBM Plex Sans"), local("IBMPlexSans"), url("../assets/fonts/IBMPlexSans-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: local("IBM Plex Sans Bold"), local("IBMPlexSans-Bold"), url("../assets/fonts/IBMPlexSans-Bold.woff2") format("woff2");
+}
+
+:root {
+  --text-h1-mobile: 40px/48px "IBM Plex Sans Bold";
+  --text-h2-mobile: 32px/40px "IBM Plex Sans Bold";
+  --text-p-mobile-sm: 16px/26px "IBM Plex Sans";
+  --text-p-mobile-md: 18px/28px "IBM Plex Sans";
+  --text-p-mobile-lg: 20px/32px "IBM Plex Sans";
+  --text-button: 18px/32px "IBM Plex Sans Bold";
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
