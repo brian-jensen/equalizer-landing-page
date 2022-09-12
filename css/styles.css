@@ -2,23 +2,29 @@
   font-family: "IBM Plex Sans";
   font-style: normal;
   font-weight: 400;
-  src: local("IBM Plex Sans"), local("IBMPlexSans"), url("../assets/fonts/IBMPlexSans-Regular.woff2") format("woff2");
+  src: url("../assets/fonts/IBMPlexSans-Regular.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "IBM Plex Sans";
+  font-family: "IBM Plex Sans Bold";
   font-style: normal;
   font-weight: 700;
-  src: local("IBM Plex Sans Bold"), local("IBMPlexSans-Bold"), url("../assets/fonts/IBMPlexSans-Bold.woff2") format("woff2");
+  src: url("../assets/fonts/IBMPlexSans-Bold.woff2") format("woff2");
 }
 
 :root {
+  --color-dark: hsl(244, 23%, 12%);
+  --color-light: hsl(20, 33%, 98%);
+  --color-bg: hsl(0, 0%, 95%);
+  --color-card-bg: hsl(12, 94%, 65%);
+  --color-btn-primary-hover: hsl(177, 68%, 64%);
+  --color-btn-secondary-hover: hsl(33, 100%, 70%);
   --text-h1-mobile: 40px/48px "IBM Plex Sans Bold";
   --text-h2-mobile: 32px/40px "IBM Plex Sans Bold";
+  --text-button: 18px/32px "IBM Plex Sans Bold";
   --text-p-mobile-sm: 16px/26px "IBM Plex Sans";
   --text-p-mobile-md: 18px/28px "IBM Plex Sans";
   --text-p-mobile-lg: 20px/32px "IBM Plex Sans";
-  --text-button: 18px/32px "IBM Plex Sans Bold";
 }
 
 * {
@@ -27,3 +33,170 @@
   padding: 0;
 }
 
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  background: var(--color-light) url("../assets/bg-main-mobile.png") no-repeat top -230px right -230px;
+}
+
+header {
+  padding: 40px 24px;
+}
+
+header .logo {
+  stroke: var(--color-dark);
+  stroke-width: 0.25;
+  stroke-dasharray: 874.55;
+  stroke-dashoffset: 874.55;
+  animation: offset 20s linear forwards;
+}
+
+header g {
+  animation: fill-it .8s 2.8s forwards
+}
+
+@keyframes offset {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill-it {
+  100% {
+    fill: var(--color-dark);
+  }
+}
+
+.hero {
+  color: var(--color-dark);
+  padding: 12px 24px;
+}
+
+.hero h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font: var(--text-h1-mobile);
+}
+
+.hero p {
+  font: var(--text-p-mobile-sm);
+}
+
+
+.app-img-container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  min-height: 420px;
+  margin-top: 166px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  background: var(--color-dark) url("../assets/bg-pattern-2.svg") no-repeat top 0 center/280px 420px;
+}
+
+.app-img {
+  display: block;
+  position: absolute;
+  top: -95px;
+  width: 208px;
+}
+
+.more-info {
+  position: relative;
+  top: -40px;
+  padding: 48px 40px;
+  border-radius: 12px;
+  color: var(--color-light);
+  background-color: var(--color-card-bg);
+}
+
+.more-info h2 {
+  font: var(--text-h2-mobile);
+  margin-bottom: 12px;
+}
+
+.more-info > p {
+  font: var(--text-p-mobile-md);
+}
+
+.cost-text {
+  display: flex;
+  align-items: center;
+  margin-top: 36px;
+  margin-bottom: 32px;
+}
+
+.price {
+  font: 65px/52px "IBM Plex Sans Bold";
+  margin-right: 16px;
+}
+
+.duration {
+  font: var(--text-p-mobile-lg)
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  margin-top: 16px;
+  font: var(--text-button);
+  border-radius: 12px;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  transition: background-color 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+button img {
+  margin-right: 8px;
+}
+
+.btn-ios {
+  color: var(--color-light);
+  background-color: var(--color-dark);
+}
+
+.btn-ios:hover {
+  background-color: var(--color-btn-primary-hover);
+}
+
+.btn-android {
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+
+.btn-android:hover {
+  background-color: var(--color-btn-secondary-hover);
+}
+
+footer {
+  padding: 24px 24px 80px 24px;
+  background-color: var(--color-light);
+}
+
+footer > img {
+  display: block;
+  margin-bottom: 32px;
+}
+
+.footer-text {
+  font: var(--text-p-mobile-sm);
+  margin-bottom: 64px;
+}
+
+.facebook:hover path {
+  fill:var(--color-card-bg)
+}
+
+.footer-social a + a{
+  margin-left: 20px;
+}
