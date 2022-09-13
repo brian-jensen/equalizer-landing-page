@@ -20,6 +20,7 @@
   --color-btn-primary-hover: hsl(177, 68%, 64%);
   --color-btn-secondary-hover: hsl(33, 100%, 70%);
   --text-h1-mobile: 40px/48px "IBM Plex Sans Bold";
+  --text-h1-tablet: 64px/64px "IBM Plex Sans Bold";
   --text-h2-mobile: 32px/40px "IBM Plex Sans Bold";
   --text-button: 18px/32px "IBM Plex Sans Bold";
   --text-p-mobile-sm: 16px/26px "IBM Plex Sans";
@@ -36,6 +37,7 @@
 html,
 body {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 body {
@@ -85,6 +87,10 @@ header g {
   font: var(--text-p-mobile-sm);
 }
 
+.tablet-pattern {
+  display: none;
+  overflow-x: hidden;
+}
 
 .app-img-container {
   display: flex;
@@ -93,8 +99,7 @@ header g {
   width: 100%;
   min-height: 420px;
   margin-top: 166px;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  border-radius: 12px;
   background: var(--color-dark) url("../assets/bg-pattern-2.svg") no-repeat top 0 center/280px 420px;
 }
 
@@ -119,7 +124,7 @@ header g {
   margin-bottom: 12px;
 }
 
-.more-info > p {
+.more-info>p {
   font: var(--text-p-mobile-md);
 }
 
@@ -183,8 +188,7 @@ footer {
   background-color: var(--color-light);
 }
 
-footer > img {
-  display: block;
+.footer-logo {
   margin-bottom: 32px;
 }
 
@@ -194,9 +198,98 @@ footer > img {
 }
 
 .facebook:hover path {
-  fill:var(--color-card-bg)
+  fill: var(--color-card-bg)
 }
 
-.footer-social a + a{
+.footer-social a+a {
   margin-left: 20px;
+}
+
+@media (min-width: 768px) {
+  body {
+    background: var(--color-light) url("../assets/bg-main-tablet.png") no-repeat top -250px right -100px;
+  }
+
+  header {
+    padding: 60px 40px;
+  }
+
+  .tablet-pattern {
+    display: block;
+    position: absolute;
+    top: -225px;
+    right: -65px;
+    width: 266px;
+    height: 400px;
+  }
+
+  .hero {
+    display: flex;
+    padding: 0;
+    position: relative;
+  }
+
+  .hero-text {
+    flex-basis: 73%;
+    margin-bottom: 90px;
+  }
+
+  .hero h1 {
+    margin-bottom: 28px;
+    font: var(--text-h1-tablet);
+  }
+
+  .hero p {
+    font: var(--text-p-mobile-md);
+  }
+
+  main {
+    padding: 35px;
+  }
+
+  .app-img {
+    left: 64px;
+    top: -145px;
+    width: 270px;
+    height: 556px;
+  }
+
+  .app-img-container {
+    min-height: 600px;
+    background: var(--color-dark) url("../assets/bg-pattern-2.svg") no-repeat top -30px left 230px/280px 420px
+  }
+
+  .more-info {
+    width: 399px;
+    height: 546px;
+    padding: 48px;
+    position: relative;
+    left: 235px;
+    top: -450px;
+    margin-bottom: -450px;
+  }
+
+  footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 60px 35px 85px 35px;
+  }
+
+  .footer-logo {
+    flex-basis: 100%;
+  }
+
+  .footer-text, 
+  .footer-social {
+    margin: 0;
+    flex-basis: 50%;
+  }
+
+  .footer-social {
+    text-align: right;
+  }
+
+
 }
