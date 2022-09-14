@@ -19,13 +19,16 @@
   --color-card-bg: hsl(12, 94%, 65%);
   --color-btn-primary-hover: hsl(177, 68%, 64%);
   --color-btn-secondary-hover: hsl(33, 100%, 70%);
-  --text-h1-mobile: 40px/48px "IBM Plex Sans Bold";
-  --text-h1-tablet: 64px/64px "IBM Plex Sans Bold";
-  --text-h2-mobile: 32px/40px "IBM Plex Sans Bold";
-  --text-button: 18px/32px "IBM Plex Sans Bold";
-  --text-p-mobile-sm: 16px/26px "IBM Plex Sans";
-  --text-p-mobile-md: 18px/28px "IBM Plex Sans";
-  --text-p-mobile-lg: 20px/32px "IBM Plex Sans";
+  --text-h1-mobile: 2.5rem/3rem "IBM Plex Sans Bold";
+  --text-h1-tablet: 4rem/4rem "IBM Plex Sans Bold";
+  --text-h1-desktop: 5.5rem/5.5rem "IBM Plex Sans Bold";
+  --text-h2-mobile: 2rem/2.5rem "IBM Plex Sans Bold";
+  --text-h2-desktop: 2.5rem/3.25rem "IBM Plex Sans Bold";
+  --text-button: 1.125rem/2rem "IBM Plex Sans Bold";
+  --text-p-mobile-sm: 1rem/1.625rem "IBM Plex Sans";
+  --text-p-mobile-md: 1.125rem/1.75rem "IBM Plex Sans";
+  --text-p-mobile-lg: 1.25rem/2rem "IBM Plex Sans";
+  --text-p-desktop: 1.25rem/2.125rem "IBM Plex Sans";
 }
 
 * {
@@ -40,7 +43,16 @@ body {
   overflow-x: hidden;
 }
 
-body {
+html {
+  
+  background-color: var(--color-bg);
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  max-width: 1440px;
+  margin: 0 auto;
   background: var(--color-light) url("../assets/bg-main-mobile.png") no-repeat top -230px right -230px;
 }
 
@@ -136,7 +148,7 @@ header g {
 }
 
 .price {
-  font: 65px/52px "IBM Plex Sans Bold";
+  font: 4.0625rem/3.25rem "IBM Plex Sans Bold";
   margin-right: 16px;
 }
 
@@ -197,7 +209,9 @@ footer {
   margin-bottom: 64px;
 }
 
-.facebook:hover path {
+.facebook:hover path,
+.instagram:hover path, 
+.twitter:hover path  {
   fill: var(--color-card-bg)
 }
 
@@ -206,7 +220,7 @@ footer {
 }
 
 @media (min-width: 768px) {
-  body {
+  .wrapper {
     background: var(--color-light) url("../assets/bg-main-tablet.png") no-repeat top -250px right -100px;
   }
 
@@ -291,5 +305,96 @@ footer {
     text-align: right;
   }
 
+}
+
+@media (min-width: 1440px) {
+  .wrapper {
+    background: var(--color-light) url("../assets/bg-main-desktop.png") no-repeat top -280px right -165px;
+  }
+
+  .tablet-pattern {
+    width: 312px;
+    height: 468px;
+    right: -165px;
+    top: -205px;
+  }
+
+  header {
+    padding: 60px 165px;
+  }
+
+  main {
+    padding: 0 165px;
+  }
+
+  .hero-text {
+    flex-basis: 78%;
+  }
+
+  .hero h1 {
+    font: var(--text-h1-desktop);
+  }
+
+  .hero p {
+    font: var(--text-p-desktop);
+  }
+
+  .app-img {
+    width: 312px;
+    height: 642px;
+    top: -215px;
+    left: 102px;
+  }
+
+  .app-img-container {
+    margin-top: 236px;
+    background: var(--color-dark) url("../assets/bg-pattern-2.svg") no-repeat top -45px left 336px/312px 468px;
+  }
+
+  .more-info {
+    width: 446px;
+    height: 625px;
+    padding: 56px;
+  }
+
+  .more-info h2 {
+    font: var(--text-h2-desktop);
+  }
+
+  .more-info > p,
+  .duration {
+    font: var(--text-p-desktop);
+  }
+
+  .cost-text {
+    margin-top: 40px;
+    margin-bottom: 46px;
+  }
+
+  .more-info {
+    left: auto;
+    margin-left: auto;
+    right: 95px;
+    top: -510px;
+    margin-bottom: -510px;
+  }
+
+  footer {
+    padding: 90px 165px;
+    background-color: transparent;
+  }
+
+  .footer-logo {
+    flex-basis: 25%;
+  }
+
+  .footer-text {
+    flex-basis: 50%;
+    padding: 0px 75px;
+  }
+
+  .footer-social {
+    flex-basis: 25%;
+  }
 
 }
